@@ -1,168 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro | SportX - Performance Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #e2ff00; /* Verde limão esportivo */
-            --secondary-color: #1a1a1a; /* Preto fosco */
-            --text-light: #ffffff;
-            --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background: var(--bg-gradient);
-            color: var(--text-light);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            background-color: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            width: 100%;
-            max-width: 450px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-            color: var(--primary-color);
-        }
-
-        .header p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border-radius: 8px;
-            border: 2px solid transparent;
-            background-color: #2a2a2a;
-            color: white;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus {
-            border-color: var(--primary-color);
-            background-color: #333;
-        }
-
-        .btn-submit {
-            width: 100%;
-            padding: 15px;
-            background-color: var(--primary-color);
-            border: none;
-            border-radius: 8px;
-            color: var(--secondary-color);
-            font-weight: 800;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.3s;
-            margin-top: 10px;
-        }
-
-        .btn-submit:hover {
-            background-color: #c8e600;
-            transform: translateY(-2px);
-        }
-
-        .footer-links {
-            margin-top: 25px;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        .footer-links a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Estilo para simular movimento esportivo */
-        .container::before {
-            content: '';
-            position: absolute;
-            top: -2px; left: -2px; right: -2px; bottom: -2px;
-            background: linear-gradient(45deg, var(--primary-color), transparent, var(--primary-color));
-            z-index: -1;
-            border-radius: 17px;
-            opacity: 0.3;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <div class="header">
-            <h1>SPORT<span>X</span></h1>
-            <p>Junte-se ao time e supere seus limites.</p>
-        </div>
-
-        <form action="#">
+<form id="cadastroForm">
             <div class="form-group">
                 <label for="name">Nome Completo</label>
                 <input type="text" id="name" placeholder="Ex: Lucas Silva" required>
             </div>
-
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="seu@email.com" required>
-            </div>
-
-            <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" placeholder="Mínimo 8 caracteres" required>
-            </div>
-
-            <div class="form-group">
-                <label for="sport">Esporte Favorito</label>
-                <input type="text" id="sport" placeholder="Ex: Crossfit, Corrida, Futebol">
-            </div>
-
             <button type="submit" class="btn-submit">Criar Conta</button>
         </form>
 
@@ -171,5 +11,20 @@
         </div>
     </div>
 
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Simulação de processamento
+            const btn = document.querySelector('.btn-submit');
+            btn.innerText = "PROCESSANDO...";
+            btn.style.opacity = "0.7";
+
+            setTimeout(() => {
+                // Altere a URL abaixo para a loja de sua preferência
+                window.location.href = "https://www.adidas.com.br"; 
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
